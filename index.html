@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Null 1</title>
+    </head>
+    <body>
+        <pre>
+    import pandas as pd
+
+    # Load the Facebook metrics dataset
+    df = pd.read_csv("D:\Downloads\DSBDA_1\DSBDA_1\dataset_Facebook.csv", sep=";")
+    df
+
+    # Create a subset based on specific columns
+    subset1 = df[['Page total likes', 'Lifetime Post Total Reach', 'Lifetime Post Total Impressions']]
+
+    # Create a subset based on specific rows
+    subset2 = df[df['Type'] == 'Photo']
+
+    # Display the created subsets
+    print("Subset 1:")
+    subset1
+
+    print("\nSubset 2:")
+    subset2
+
+    # Assuming you have two datasets: df1 and df2
+    # Merge the datasets based on a common column
+    merged_df = pd.merge(subset1, subset2, on='Lifetime Post Total Impressions')
+    # Display the merged dataset
+    merged_df
+
+    # Transpose the DataFrame
+    transposed_df = df.transpose()
+    # Display the transposed DataFrame
+    transposed_df
+        </pre>
+    </body>
+</html>
